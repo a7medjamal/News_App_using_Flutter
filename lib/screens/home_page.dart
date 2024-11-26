@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:news_app/widgets/categories_list_view.dart';
+import 'package:news_app/widgets/news_list_view.dart';
 import 'package:news_app/widgets/news_tile.dart';
 
 class HomePage extends StatelessWidget {
@@ -32,7 +35,22 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: const NewsTile(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+        child: Column(
+          children: [
+            Container(
+              child: const CategoriesListView(),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Expanded(
+              child: NewsListView(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
