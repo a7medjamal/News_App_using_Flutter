@@ -12,8 +12,8 @@ class NewsListView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemCount: 10,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 23),
+        return const Padding(
+          padding: EdgeInsets.only(bottom: 23),
           child: NewsTile(),
         );
       },
