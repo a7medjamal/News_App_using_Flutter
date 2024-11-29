@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:news_app/widgets/news_tile.dart';
 
@@ -8,15 +10,13 @@ class NewsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: const BouncingScrollPhysics(),
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.only(bottom: 23),
-          child: NewsTile(),
-        );
-      },
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        childCount: 10,
+        (context, index) {
+          return NewsTile();
+        },
+      ),
     );
   }
 }
