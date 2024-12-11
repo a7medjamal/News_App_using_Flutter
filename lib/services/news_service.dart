@@ -8,21 +8,26 @@ class NewsService {
   final Dio dio;
   NewsService(this.dio);
 
-  Future<List<ArticleModel>> getGeneralNews() async {
+  Future<List<ArticleModel>> getTopHeadlines({required String category}) async {
     try {
       String apiKey =
-          "https://newsapi.org/v2/everything?q=general&apiKey=${dotenv.env['API_KEY']}";
+          "https://newsapi.org/v2/everything?q=$category&apiKey=${dotenv.env['API_KEY']}&language=en";
       Response response = await dio.get(apiKey);
       Map<String, dynamic> jsonData = response.data;
       List<ArticleModel> articles = [];
       for (var article in jsonData['articles']) {
         if (article['urlToImage'] != null &&
             article['description'] != null &&
-            article['title'] != null) {
-          articles.add(ArticleModel(
+            article['title'] != null &&
+            (article['urlToImage'].startsWith('http://') ||
+                article['urlToImage'].startsWith('https://'))) {
+          articles.add(
+            ArticleModel(
               title: article['title'],
               subtitle: article['description'],
-              Image: article['urlToImage']));
+              Image: article['urlToImage'],
+            ),
+          );
         }
       }
       return articles;

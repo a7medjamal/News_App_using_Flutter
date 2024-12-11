@@ -1,13 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:news_app/views/home_page.dart';
+import 'package:news_app/views/home_view.dart';
 import 'package:news_app/services/news_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
-  NewsService(Dio()).getGeneralNews();
   runApp(const NewsApp());
 }
 

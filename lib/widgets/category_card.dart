@@ -14,7 +14,9 @@ class CategoryCard extends StatelessWidget {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) {
-              return CategoryView();
+              return CategoryView(
+                category: categoryItem.categoryName,
+              );
             },
           ),
         );
@@ -27,15 +29,20 @@ class CategoryCard extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             image: DecorationImage(
-                fit: BoxFit.fill, image: AssetImage(categoryItem.imageUrl)),
+              fit: BoxFit.fill,
+              image: AssetImage(
+                categoryItem.imageUrl,
+              ),
+            ),
           ),
           child: Center(
             child: Text(
               categoryItem.categoryName,
               style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
           ),
         ),

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_typing_uninitialized_variables, unnecessary_string_interpolations
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +8,11 @@ import 'package:news_app/widgets/news_list_view.dart';
 import 'package:news_app/widgets/news_tile.dart';
 
 class NewsListViewBuilder extends StatefulWidget {
+  final String category;
+
   const NewsListViewBuilder({
     super.key,
+    required this.category,
   });
 
   @override
@@ -21,7 +24,9 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
   @override
   void initState() {
     super.initState();
-    future = NewsService(Dio()).getGeneralNews();
+    future = NewsService(Dio()).getTopHeadlines(
+      category: widget.category,
+    );
   }
 
   @override

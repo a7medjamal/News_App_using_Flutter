@@ -49,7 +49,9 @@ class HomePage extends StatelessWidget {
                 height: 25,
               ),
             ),
-            NewsListViewBuilder(),
+            NewsListViewBuilder(
+              category: 'general',
+            ),
           ],
         ),
       ),
