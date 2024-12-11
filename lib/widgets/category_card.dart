@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/models/category_model.dart';
 import 'package:news_app/views/category_view.dart';
 
@@ -22,7 +23,7 @@ class CategoryCard extends StatelessWidget {
         );
       },
       child: Padding(
-        padding: const EdgeInsets.only(right: 16),
+        padding: EdgeInsets.only(right: 16.w),
         child: Container(
           height: 100,
           width: 170,
@@ -38,10 +39,10 @@ class CategoryCard extends StatelessWidget {
           child: Center(
             child: Text(
               categoryItem.categoryName,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 20.h,
               ),
             ),
           ),

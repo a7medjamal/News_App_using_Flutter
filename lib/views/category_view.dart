@@ -13,7 +13,7 @@ class CategoryView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
@@ -22,23 +22,25 @@ class CategoryView extends StatelessWidget {
             Text(
               "News",
               style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold),
+                color: Colors.black,
+                fontSize: 26.h,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             Text(
               "Cloud",
               style: TextStyle(
-                  color: Colors.redAccent,
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold),
+                color: Colors.redAccent,
+                fontSize: 26.h,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
         child: CustomScrollView(
           slivers: [
             NewsListViewBuilder(

@@ -2,6 +2,8 @@
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/main.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/services/news_service.dart';
 import 'package:news_app/widgets/news_list_view.dart';
@@ -64,7 +66,7 @@ class CircularIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: CircularProgressIndicator(
-        strokeWidth: 5,
+        strokeWidth: 5.w,
         valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
         backgroundColor: Colors.white,
       ),

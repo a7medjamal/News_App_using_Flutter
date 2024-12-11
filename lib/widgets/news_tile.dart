@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_url_launcher/easy_url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/main.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/widgets/news_list_view_builder.dart';
 
@@ -27,7 +29,7 @@ class NewsTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: CachedNetworkImage(
               imageUrl: article.Image,
-              height: 200,
+              height: 200.h,
               width: double.infinity,
               fit: BoxFit.cover,
               placeholder: (context, url) => Center(child: CircularIndicator()),
@@ -46,7 +48,7 @@ class NewsTile extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: Colors.black87,
-              fontSize: 20,
+              fontSize: 20.h,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -62,7 +64,7 @@ class NewsTile extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: Colors.black54,
-              fontSize: 16,
+              fontSize: 16.h,
               fontWeight: FontWeight.w400,
             ),
           ),
