@@ -21,13 +21,7 @@ class NewsService {
             article['title'] != null &&
             (article['urlToImage'].startsWith('http://') ||
                 article['urlToImage'].startsWith('https://'))) {
-          articles.add(
-            ArticleModel(
-              title: article['title'],
-              subtitle: article['description'],
-              Image: article['urlToImage'],
-            ),
-          );
+          articles.add(ArticleModel.fromJson(article));
         }
       }
       return articles;

@@ -38,6 +38,8 @@ dependencies:
   dio: ^5.7.0
   flutter_dotenv: ^5.2.1
   cached_network_image_plus: ^0.0.5
+  flutter_screenutil: ^5.9.3
+  easy_url_launcher: ^0.0.7
 
 dev_dependencies:
   flutter_test:
